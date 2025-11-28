@@ -1,11 +1,14 @@
-import { Text, View } from "react-native";
-import { red } from "react-native-reanimated/lib/typescript/Colors";
+import { BotaoCustomizado } from '@/components/botaoCustomizado';
+import { InputCustomizado } from '@/components/inputCustomizado';
+import { Text, View } from 'react-native';
 
 export function LoginScreen() {
-  return(
-    <View className="flex-1 items-center justify-center bg-orange-300">
-        <Text className="text-6xl">Tela de login</Text>
-    </View>
+  return (
+    <View className="flex-1 items-center justify-center bg-slate-600">
+      <InputCustomizado placeholder={'Login'} />
+      <InputCustomizado placeholder="senha" />
 
-  )
+      <BotaoCustomizado title="entrar" />
+    </View>
+  );
 }
