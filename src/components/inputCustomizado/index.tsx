@@ -1,5 +1,9 @@
-import { TextInput, TextInputProps } from 'react-native';
+import { TextInput, TextInputProps, View } from 'react-native';
 
-export function InputCustomizado({...reset}:TextInputProps){
-  return <TextInput {...reset} />;
+export function InputCustomizado({ ...reset }: TextInputProps) {
+  return (
+    <View className="border-gray-950 - border-2 rounded-2xl: w-full">
+      <TextInput {...reset} />
+    </View>
+  );
 }
