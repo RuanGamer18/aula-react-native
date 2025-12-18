@@ -4,16 +4,27 @@ import './global.css';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Listas } from '@/screens/listas';
-
+import { LoginScreen } from '@/screens/login';
+import { Soma } from '@/screens/soma';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
     <>
       <SafeAreaView className="flex-1">
-        <Listas />
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="soma" component={Soma} />
+            <Stack.Screen name="Listas" component={Listas} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </SafeAreaView>
 
       <StatusBar style="auto" />
-    </> 
+    </>
   );
 }
