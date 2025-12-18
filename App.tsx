@@ -8,18 +8,19 @@ import { LoginScreen } from '@/screens/login';
 import { Soma } from '@/screens/soma';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { RootStackParamList } from '@/interface/rootPages';
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     <>
       <SafeAreaView className="flex-1">
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="soma" component={Soma} />
-            <Stack.Screen name="Listas" component={Listas} />
+            <Stack.Screen name ="login" component={LoginScreen} />
+            <Stack.Screen name ="soma" component={Soma} />
+            <Stack.Screen name ="listas" component={Listas} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
